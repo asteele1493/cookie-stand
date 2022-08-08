@@ -16,9 +16,4 @@
   5. Display the values of each array as unordered lists in the browser.
   6. Calculating the sum of these hourly totals; your output for each location should look like this:
   7. Display the lists on sales.html. We will be adding features to this application and working with its layout in the upcoming labs.
-
-#### Ideas
-
-- Properties needed in js.app : operating hours, min number of customers, max number of customers, avg number of cookies purchased per customer, location,
-
-- Think of color scheme, fonts, images
+  
