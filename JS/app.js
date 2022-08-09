@@ -6,7 +6,89 @@ let op_hours = [`6 am`, `7 am `, `8 am`, `9 am`, `10 am`, `11 am`, `12 pm`, `1 p
 //stores array; uncomment when constructors are in place?
 let Stores = ['Seattle', 'Tokyo', 'Dubai', 'Paris', 'Lima'];
 
+//location totals
 let allStores = [];
+
+//Constructor function
+function Store(name, min_cust, max_cust, avg_cookie) {
+  this.name = name;
+  this.min_cust = min_cust;
+  this.max_cust = max_cust;
+  this.avg_cookie = avg_cookie;
+  this.dailyCookieSales = [];
+  allStores.push(this);
+}
+
+//Prototypes//////////////////////////////
+
+//customer per hour generator
+Store.prototype.custPerHour = function(){
+  custPerHour(this.min, this.max)
+    return Math.random;
+}
+
+//random number generator
+Store.prototype.getRandomNumberfunction = function(){
+  getRandomNumber(this.min, this.max) 
+  return Math.floor(Math.random() * (this.max - this.min +1) + this.min);
+}
+
+//cookie sales per hour generator?
+Store.prototype.hourlySales = function (){
+  for (let i = 0; i < op_hours.length; i++){
+    console.log(op_hours);
+    let getRandomCust = getRandomNumber(this.min_cust, this.max_cust);
+    let cookieSales = Math.ceil((this.randomCustNumber*this.avg_cookie));
+    hourlySales.push(cookieSales);}
+    console.log(hourlySales);
+  
+}
+
+//daily sales by store function
+Store.prototype.dailySales = function(){
+  for (let j = 0; j < op_hours.length; j++){
+    let sum = 0;
+    sum += this.cookieSales[i].dailySales;
+    console.log (dailySales());
+  }
+  console.log(sum);
+}
+
+//Stores utilizing constructor function/////////////////////
+
+new Store("Seattle", 23, 65, 6.3);
+new Store("Tokyo", 3, 24, 1.2);
+new Store("Dubai", 11, 38, 3.7);
+new Store("Paris", 20, 38, 2.3);
+new Store("Lima", 2, 16, 4.6);
+
+let myForm = document.getElementById('locationForm');
+myForm.addEventListener('submit', handleSubmit);
+function handleSubmit(event){
+  event.preventDefault();
+
+  let location = event.target.location.value;
+  let minCusts = event.target.minCust.value;
+  let maxCusts = event.target.maxCusts.value;
+  let cookieAvg = event.target.avgCookie.value;
+}
+
+
+//Render function REDO////////////////////////////////////////////
+// Store.prototype.render = function(){
+//   let table = document.getElementById('tbody');
+//   this.dailySales();
+//   console.log(this);
+
+//   let tableRow = document.createElement('tr'); 
+//   table.append(tableRow);
+
+//   let tableComplete = document.createElement('td');
+//   tableComplete.textContent = this.name;
+//   tableRow.appendChild(tableComplete);
+
+
+///////////Code I'm too attached to let go of just yet//////////////////////////
 
 
 //custPerHour.store = Math.random
@@ -178,59 +260,4 @@ let allStores = [];
 // let p4 = document.createElement('p');
 // p4.innerText = "Lima";
 // list4.appendChild(p4);
-
-
-//Constructor function
-function Store(name, min_cust, max_cust, avg_cookie) {
-  this.name = name;
-  this.min_cust = min_cust;
-  this.max_cust = max_cust;
-  this.avg_cookie = avg_cookie;
-  this.dailyCookieSales = [];
-  allStores.push(this);
 }
-
-//Prototypes
-
-//customer per hour generator
-Store.prototype.custPerHour = function(){
-  custPerHour(this.min, this.max)
-    return Math.random;
-}
-
-//random number generator
-Store.prototype.getRandomNumberfunction = function(){
-  getRandomNumber(this.min, this.max) 
-  return Math.floor(Math.random() * (this.max - this.min +1) + this.min);
-}
-
-//cookie sales per hour generator?
-Store.prototype.hourlySales = function (){
-  for (let i = 0; i < op_hours.length; i++){
-    console.log(op_hours);
-    let getRandomCust = getRandomNumber(this.min_cust, this.max_cust);
-    let cookieSales = Math.ceil((this.randomCustNumber*this.avg_cookie));
-    hourlySales.push(cookieSales);}
-    console.log(hourlySales);
-  
-}
-
-//daily sales by store function
-Store.prototype.dailySales = function(){
-  for (let j = 0; j < op_hours.length; j++){
-    let sum = 0;
-    sum += this.cookieSales[i].dailySales;
-    console.log (dailySales());
-  }
-  console.log(sum);
-}
-
-//Stores using constructor
-
-new Store("Seattle", 23, 65, 6.3);
-new Store("Tokyo", 3, 24, 1.2);
-new Store("Dubai", 11, 38, 3.7);
-new Store("Paris", 20, 38, 2.3);
-new Store("Lima", 2, 16, 4.6);
-
-console.log(allStores);
