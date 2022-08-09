@@ -20,6 +20,7 @@ function Store(name, min_cust, max_cust, avg_cookie) {
 }
 
 //Prototypes//////////////////////////////
+//Tbh, not sure if I want to keep these as prototypes, or consolidate them all into my constructor function.
 
 //customer per hour generator
 Store.prototype.custPerHour = function(){
@@ -62,6 +63,42 @@ new Store("Dubai", 11, 38, 3.7);
 new Store("Paris", 20, 38, 2.3);
 new Store("Lima", 2, 16, 4.6);
 
+
+function render() {
+  let parentElement = getElementById('storeNameTable');
+  let tr1 = document.createElement('tr');
+  let th1 = document.createElement('th');
+  th1.textContent = 'Store Name';
+  tr1.appendChild(th1);
+  for (let i = 0; i < op_hours.length; i++){
+    th1 = document.createElement('th');
+    th1.textContent = op_hours[i];
+    tr1.appendChild(th1);
+  };
+  th1 = document.createElement('th');
+  th1.textContent = 'Total';
+  tr1.appendChild(th1);
+  storeNameTable.appendChild(tr1);
+}
+
+Stores.prototype.render = function(){
+  let table = document.getElementById('storeNameTable'); 
+  let row1 = document.createElement('tr');
+  let row2 = document.createElement('td');
+  row2.textContent = this.name;
+  row1.appendChild(row2);
+ 
+  for (let i = 0; i < op_hours.length; i++){
+    row2 = document.createElement('td');
+    row2.textContent = this.cookieSales[i];
+    row1.appendChild(row2);
+  }
+  row2 = document.createElement('td');
+  row2.textContent = this.dailyCookieSales;
+  row1.appendChild(row2);
+}
+  
+//Event Handler & Form implementation/////////////////////
 let myForm = document.getElementById('locationForm');
 myForm.addEventListener('submit', handleSubmit);
 function handleSubmit(event){
@@ -72,21 +109,6 @@ function handleSubmit(event){
   let maxCusts = event.target.maxCusts.value;
   let cookieAvg = event.target.avgCookie.value;
 }
-
-
-//Render function REDO////////////////////////////////////////////
-// Store.prototype.render = function(){
-//   let table = document.getElementById('tbody');
-//   this.dailySales();
-//   console.log(this);
-
-//   let tableRow = document.createElement('tr'); 
-//   table.append(tableRow);
-
-//   let tableComplete = document.createElement('td');
-//   tableComplete.textContent = this.name;
-//   tableRow.appendChild(tableComplete);
-
 
 ///////////Code I'm too attached to let go of just yet//////////////////////////
 
@@ -260,4 +282,3 @@ function handleSubmit(event){
 // let p4 = document.createElement('p');
 // p4.innerText = "Lima";
 // list4.appendChild(p4);
-}

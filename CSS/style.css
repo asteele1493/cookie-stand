@@ -1,10 +1,11 @@
 html{
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   background-color: #F09185;
   justify-content: space-evenly;
   align-items: center;
-  width: 100%;
+  min-width: 0;
   padding: 1rem;
   row-gap: 10px;
   column-gap: 20px;
