@@ -68,7 +68,7 @@ function render() {
   let parentElement = getElementById('storeNameTable');
   let tr1 = document.createElement('tr');
   let th1 = document.createElement('th');
-  th1.textContent = 'Store Name';
+  th1.textContent = 'Current Sales';
   tr1.appendChild(th1);
   for (let i = 0; i < op_hours.length; i++){
     th1 = document.createElement('th');
@@ -76,27 +76,27 @@ function render() {
     tr1.appendChild(th1);
   };
   th1 = document.createElement('th');
-  th1.textContent = 'Total';
+  th1.textContent = 'Total sales';
   tr1.appendChild(th1);
   storeNameTable.appendChild(tr1);
 }
 
-Stores.prototype.render = function(){
-  let table = document.getElementById('storeNameTable'); 
-  let row1 = document.createElement('tr');
-  let row2 = document.createElement('td');
-  row2.textContent = this.name;
-  row1.appendChild(row2);
+// Stores.prototype.render = function(){
+//   let table = document.getElementById('storeNameTable'); 
+//   let row1 = document.createElement('tr');
+//   let row2 = document.createElement('td');
+//   row2.textContent = this.name;
+//   row1.appendChild(row2);
  
-  for (let i = 0; i < op_hours.length; i++){
-    row2 = document.createElement('td');
-    row2.textContent = this.cookieSales[i];
-    row1.appendChild(row2);
-  }
-  row2 = document.createElement('td');
-  row2.textContent = this.dailyCookieSales;
-  row1.appendChild(row2);
-}
+//   for (let i = 0; i < op_hours.length; i++){
+//     row2 = document.createElement('td');
+//     row2.textContent = this.cookieSales[i];
+//     row1.appendChild(row2);
+//   }
+//   row2 = document.createElement('td');
+//   row2.textContent = this.dailyCookieSales;
+//   row1.appendChild(row2);
+//}
   
 //Event Handler & Form implementation/////////////////////
 let myForm = document.getElementById('locationForm');
