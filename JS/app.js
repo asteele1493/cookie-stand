@@ -64,39 +64,36 @@ new Store("Paris", 20, 38, 2.3);
 new Store("Lima", 2, 16, 4.6);
 
 
-function render() {
-  let parentElement = getElementById('storeNameTable');
-  let tr1 = document.createElement('tr');
-  let th1 = document.createElement('th');
-  th1.textContent = 'Current Sales';
-  tr1.appendChild(th1);
-  for (let i = 0; i < op_hours.length; i++){
-    th1 = document.createElement('th');
-    th1.textContent = op_hours[i];
-    tr1.appendChild(th1);
-  };
-  th1 = document.createElement('th');
-  th1.textContent = 'Total sales';
-  tr1.appendChild(th1);
-  storeNameTable.appendChild(tr1);
-}
 
-// Stores.prototype.render = function(){
-//   let table = document.getElementById('storeNameTable'); 
-//   let row1 = document.createElement('tr');
-//   let row2 = document.createElement('td');
-//   row2.textContent = this.name;
-//   row1.appendChild(row2);
- 
-//   for (let i = 0; i < op_hours.length; i++){
-//     row2 = document.createElement('td');
-//     row2.textContent = this.cookieSales[i];
-//     row1.appendChild(row2);
-//   }
-//   row2 = document.createElement('td');
-//   row2.textContent = this.dailyCookieSales;
-//   row1.appendChild(row2);
-//}
+function render() {
+  //let parentElement = getElementById('storeNameTable');
+  getElementById('tableGoesHere');
+  let tbl = document.body.createElement('table');
+  let tblBody = document.body.createElement('tbody');
+  let tblHeader = document.createElement('th');
+  let tblRow = document.createElement('tr');
+  tblHeader.textContent = 'Current Sales';
+  tblRow.appendChild(tblHeader);
+
+  for (let i = 0; i < op_hours.length; i++){
+    tblHeader = document.createElement('th');
+    tblHeader.textContent = op_hours[i];
+    tblRow.appendChild(tblHeader);
+  }
+
+  let tblRowTwo = document.createElement('td'); 
+  tblRowTwo.textContent = this.name;
+  tblRow.appendChild(tblRowTwo);
+
+  for (let i = 0; i < op_hours; i++){
+    tblRowTwo = document.createElement('td');
+    tblRowTwo.textContent = this.cookieSales[i];
+    tblRow.appendChild(tblRowTwo);
+  }
+  tblRowTwo = document.createElement('td');
+  tblRowTwo.textContent = this.dailyCookieSales;
+  tblRow.appendChild(tblRowTwo);
+}
   
 //Event Handler & Form implementation/////////////////////
 let myForm = document.getElementById('locationForm');
@@ -108,6 +105,22 @@ function handleSubmit(event){
   let minCusts = event.target.minCust.value;
   let maxCusts = event.target.maxCusts.value;
   let cookieAvg = event.target.avgCookie.value;
+}
+
+//Appending form to HTML table?
+document.getElementById('submit').onclick = function(){
+  document.getElementById('tableGoesHere').style.display = 'block';
+
+  let table = document.getElementById('tableGoesHere');
+  let row = table.insertRow(-1);
+  let location = row.insertCell(1);
+  let minCusts = row.insertCell(2);
+  let maxCusts = row.insertCell(3);
+  let cookieAvg = row.insertCell(4);
+  location.textContent = document.getElementById('location').value;
+  minCusts.textContent = document.getElementById('minCusts').value;
+  maxCusts.textContent = document.getElementById('maxCusts').value;
+  cookieAvg.textContent = document.getElementById('cookieAvg').value;
 }
 
 ///////////Code I'm too attached to let go of just yet//////////////////////////
