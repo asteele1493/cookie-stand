@@ -63,23 +63,15 @@ new Store("Dubai", 11, 38, 3.7);
 new Store("Paris", 20, 38, 2.3);
 new Store("Lima", 2, 16, 4.6);
 
-
+/////////////////////////////////////////////
 function render() {
-  let parentElement = getElementById('storeNameTable');
-  let tr1 = document.createElement('tr');
-  let th1 = document.createElement('th');
-  th1.textContent = 'Store Name';
-  tr1.appendChild(th1);
-  for (let i = 0; i < op_hours.length; i++){
-    th1 = document.createElement('th');
-    th1.textContent = op_hours[i];
-    tr1.appendChild(th1);
-  };
-  th1 = document.createElement('th');
-  th1.textContent = 'Total';
-  tr1.appendChild(th1);
-  storeNameTable.appendChild(tr1);
-}
+  document.getElementById("tableHead").innerText = null;
+  document.getElementById("tableBody").innerText = null;
+  document.getElementById("tableFoot").innerText = null;
+  rendertableHead();
+  rendertableBody();
+  rendertableFoot();
+
 
 Stores.prototype.render = function(){
   let table = document.getElementById('storeNameTable'); 
@@ -109,6 +101,15 @@ function handleSubmit(event){
   let maxCusts = event.target.maxCusts.value;
   let cookieAvg = event.target.avgCookie.value;
 }
+
+//Adding new location to form///////////////////////////////
+
+let addForm = document.getElementById('locationForm');
+locationForm.addEventListener("submit", function(event){
+  event.preventDefault();
+  let form = event.target;
+}
+
 
 ///////////Code I'm too attached to let go of just yet//////////////////////////
 

@@ -19,7 +19,9 @@ nav{
 
 
 h1 {
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family: ; <style>
+  @import url('https://fonts.googleapis.com/css2?family=Ultra&display=swap');
+  </style>
   text-align: center;
   display: flex;
   background-color: #A3574D;
