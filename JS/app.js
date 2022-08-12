@@ -62,6 +62,31 @@ new Store("Tokyo", 3, 24, 1.2);
 new Store("Dubai", 11, 38, 3.7);
 new Store("Paris", 20, 38, 2.3);
 new Store("Lima", 2, 16, 4.6);
+/////////////Adding this here because I feel stupid and need a visualization////////
+// create table header (this will include operating hours)
+let table = document.getElementById('storeNameTable');
+let tableHeader = document.createElement('tr');
+let header = document.createElement('th');
+table.appendChild(tableHeader);
+tableHeader.innerText = 'Operating Hours';
+
+//for loop to iterate through and append each hour each location will be operating.
+
+for (let i = 0; i < op_hours.length; i++){
+  header = document.createElement('th');
+  header.innerText = op_hours[i];
+  tableHeader.appendChild(header);
+  allStores[i] = 0;
+}
+
+
+
+
+//create table rows (all locations with their respective hourly totals)///////
+
+//create table footer (this will include totals for all locations, and grand total of total sales)/////////
+
+
 
 /////////////////////////////////////////////
 function render() {
@@ -71,6 +96,7 @@ function render() {
   rendertableHead();
   rendertableBody();
   rendertableFoot();
+}
 
 
 Stores.prototype.render = function(){
@@ -277,4 +303,4 @@ let addForm = document.getElementById('locationForm');
 // let list4 = document.getElementById('lim');
 // let p4 = document.createElement('p');
 // p4.innerText = "Lima";
-// list4.appendChild(p4);
+// list4.appendChild(p4)
