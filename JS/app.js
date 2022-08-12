@@ -105,11 +105,6 @@ function handleSubmit(event){
 //Adding new location to form///////////////////////////////
 
 let addForm = document.getElementById('locationForm');
-locationForm.addEventListener("submit", function(event){
-  event.preventDefault();
-  let form = event.target;
-}
-
 
 ///////////Code I'm too attached to let go of just yet//////////////////////////
 

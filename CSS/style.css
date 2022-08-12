@@ -19,9 +19,7 @@ nav{
 
 
 h1 {
-  font-family: ; <style>
-  @import url('https://fonts.googleapis.com/css2?family=Ultra&display=swap');
-  </style>
+  font-family: ; 'Ultra', serif;
   text-align: center;
   display: flex;
   background-color: #A3574D;
