@@ -101,6 +101,10 @@ function render() {
 
 Stores.prototype.render = function(){
   let table = document.getElementById('storeNameTable'); 
+  let row0 = document.createElement('tr');
+  let header = document.createElement('th');
+  header.textContent = 'Locations';
+  row0.appendChild(header);
   let row1 = document.createElement('tr');
   let row2 = document.createElement('td');
   row2.textContent = this.name;
@@ -114,6 +118,14 @@ Stores.prototype.render = function(){
   row2 = document.createElement('td');
   row2.textContent = this.dailyCookieSales;
   row1.appendChild(row2);
+  
+  for (let i = 0; i < op_hours.length; i++){
+    row3 = document.createElement('td');
+    row3.textContent = this.location;
+    row2.appendChild(row3);
+  }
+
+  
 }
   
 //Event Handler & Form implementation/////////////////////
@@ -123,14 +135,18 @@ function handleSubmit(event){
   event.preventDefault();
 
   let location = event.target.location.value;
-  let minCusts = event.target.minCust.value;
-  let maxCusts = event.target.maxCusts.value;
-  let cookieAvg = event.target.avgCookie.value;
+  let minCusts = parseInt(event.target.minCust.value);
+  let maxCusts = parseInt(event.target.maxCusts.value);
+  let cookieAvg = parseInt(event.target.avgCookie.value);
 }
 
 //Adding new location to form///////////////////////////////
 
 let addForm = document.getElementById('locationForm');
+
+console.log(allStores);
+
+
 
 ///////////Code I'm too attached to let go of just yet//////////////////////////
 
